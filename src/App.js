@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css';
 
 // Componente do Project
-import Template from './Template'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import About from './components/About'
@@ -11,6 +10,7 @@ import Servicos from './components/Servicos'
 import Portifolio from './components/Portifolio'
 import Price from './components/Price'
 import Contact from './components/Contact'
+import Admin from './Admin/Admin'
 
 class App extends Component {
   render() {
@@ -23,6 +23,8 @@ class App extends Component {
           <Route path='/portfolio' component={Portifolio} />
           <Route path='/pricing' component={Price} />
           <Route path='/contact' component={Contact} />
+
+          <Route path='/admin' component={Admin} />
           <Footer/>
         </div>
       </BrowserRouter>

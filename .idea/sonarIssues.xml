@@ -23,6 +23,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/Admin/Admin.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Admin/AdminMenu.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/Admin/AdminPortifolio.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/App.css">
           <value>
             <set />
@@ -63,6 +78,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/components/ItemPortfolio.js">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/components/Portifolio.js">
           <value>
             <set />
@@ -79,6 +99,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/src/components/Servicos.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/config.js">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/firebase-config.js">
           <value>
             <set />
           </value>
