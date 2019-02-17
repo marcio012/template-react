@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AdminMenu = props => {
 
@@ -9,7 +10,7 @@ const AdminMenu = props => {
         Selecione uma opção
       </a>
 
-      <a href='/' className="list-group-item list-group-item-action">Portifólio</a>
+      <Link to='/admin/portfolio' className="list-group-item list-group-item-action">Portifólio</Link>
       {/*<button type="button" className="list-group-item list-group-item-action">Morbi leo risus</button>*/}
       {/*<button type="button" className="list-group-item list-group-item-action">Porta ac consectetur ac</button>*/}
       {/*<button type="button" className="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>*/}

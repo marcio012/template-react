@@ -6,7 +6,7 @@ const ItemPortfolio = props => {
 
     <div className='col-sm-4'>
       <div className='thumbnail'>
-        <img src={ props.conteudo.img } alt='Paris' width='400' height='300'/>
+        <img src={ props.conteudo.img } width='400' height='300'/>
         {/*{JSON.stringify(props)}*/}
         <p>
           <strong>
