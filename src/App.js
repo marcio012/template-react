@@ -11,6 +11,7 @@ import Portifolio from './components/Portifolio'
 import Price from './components/Price'
 import Contact from './components/Contact'
 import Admin from './Admin/Admin'
+import Login from './Admin/Login'
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
           <Route path='/contact' component={Contact} />
 
           <Route path='/admin' component={Admin} />
+          <Route path='/login' component={Login}/>
           <Footer/>
         </div>
       </BrowserRouter>
