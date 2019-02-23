@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 
 import { auth } from '../firebase-config'
+import {Redirect} from 'react-router-dom'
 
 class Login extends Component{
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      estaAutenticado: false,
+      estalogado: false,
+      error: false
+    }
 
     this.email = null
     this.senha = null
@@ -15,17 +22,27 @@ class Login extends Component{
 
   autenticaUsuario(e) {
     e.preventDefault()
+    this.setState({estalogado: true, error: false})
     console.log(this.email.value, this.senha.value)
     auth.signInWithEmailAndPassword(this.email.value, this.senha.value)
       .then(usuario => {
         console.log("Usuário Logado :", usuario)
+        this.setState({estaAutenticado: true})
+
       })
       .catch(error => {
         console.log('Error', error)
+
+        this.setState({error: true, estaAutenticado: false, estalogado: false})
       })
   }
 
   render() {
+
+    if (this.state.estaAutenticado) {
+      return <Redirect to='/admin'/>
+    }
+
     return (
       <div className='container-fluid'>
         <h1>Login</h1>
@@ -41,10 +58,7 @@ class Login extends Component{
                    placeholder="nome@email.com"
                    ref={ref => this.email = ref}
             />
-            <small id="emailHelp"
-                   className="form-text text-muted">
-              We'll never share your email with anyone else.
-            </small>
+
           </div>
 
           <div className="form-group text-left">
@@ -55,9 +69,22 @@ class Login extends Component{
                    placeholder="Password"
                    ref={ref => this.senha = ref}
             />
+
+            {
+              this.state.error && <small id="emailHelp"
+                                         className="form-text text-muted">
+                Error ao logar. Verificar nome usuário e senha.
+              </small>
+            }
+
           </div>
 
-          <button className="btn btn-primary" onClick={this.autenticaUsuario}>Submit</button>
+
+          <button className="btn btn-primary"
+                  disabled={this.state.estalogado}
+                  onClick={this.autenticaUsuario}>
+            Submit
+          </button>
 
         </form>
       </div>
