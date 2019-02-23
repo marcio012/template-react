@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Redirect, Route} from 'react-router-dom'
-import { auth } from '../firebase-config'
+import { auth } from '../../firebase-config'
 
 import AdminMenu from './AdminMenu'
 import AdminPortifolio from './AdminPortifolio'

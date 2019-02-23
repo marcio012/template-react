@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import config, { storage } from './../firebase-config'
+import config, { storage } from '../../firebase-config'
 
 class AdminPortifolio extends Component{
 

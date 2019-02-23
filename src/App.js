@@ -10,8 +10,8 @@ import Servicos from './components/Servicos'
 import Portifolio from './components/Portifolio'
 import Price from './components/Price'
 import Contact from './components/Contact'
-import Admin from './Admin/Admin'
-import Login from './Admin/Login'
+import Admin from './components/Admin/Admin'
+import Login from './components/Admin/Login'
 
 class App extends Component {
   render() {
