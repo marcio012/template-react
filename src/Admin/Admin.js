@@ -39,7 +39,7 @@ class Admin extends Component{
       )
     }
     if (!this.state.estaAutenticado) {
-      return <Redirect to='/login'/>
+      return <Redirect to='login'/>
     }
 
     return (
