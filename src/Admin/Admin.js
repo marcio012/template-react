@@ -32,14 +32,18 @@ class Admin extends Component{
 
   render() {
     if (this.state.estaLogando){
-      return <p>aguarde ...</p>
+      return (
+        <div className='container-fluid'>
+          <p><span className='glyphicon glyphicon-refresh'/> Aguarde ...</p>
+        </div>
+      )
     }
     if (!this.state.estaAutenticado) {
       return <Redirect to='/login'/>
     }
-    
+
     return (
-      <div>
+      <div className='container-fluid'>
         <h2>Painel Administrativo</h2>
 
         <Route path={'/'} component={AdminMenu} />

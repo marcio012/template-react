@@ -7,14 +7,25 @@ class AdminPortifolio extends Component{
   constructor(props) {
     super(props)
 
+    this.state = {
+      estaGravando: false
+    }
+
     this.gravaPortfolio = this.gravaPortfolio.bind(this)
   }
 
   gravaPortfolio(e) {
+    const itemPortfolio = {
+      titulo: this.titulo.value,
+      descricao: this.descricao.value,
+      img: this.img
+    }
+
+    this.setState({estaGravando: true})
     e.preventDefault()
     console.log("Vamos Gravar")
 
-    const arquivo = this.img.files[0]
+    const arquivo = itemPortfolio.img.files[0]
     const {name, size, type} = arquivo
 
     const ref = storage.ref(name)
@@ -24,16 +35,17 @@ class AdminPortifolio extends Component{
           .then(downloadURL => {
 
             const novoPortifolio = {
-              titulo: this.titulo.value,
-              descricao: this.descricao.value,
+              titulo: itemPortfolio.titulo,
+              descricao: itemPortfolio.descricao,
               img: downloadURL
             }
-
 
             // gravando no firebase
             config.push('portifolio', {
               data: novoPortifolio
             })
+
+            this.setState({estaGravando: false})
         })
       })
 
@@ -42,6 +54,15 @@ class AdminPortifolio extends Component{
 
 
   render() {
+
+    if (this.state.estaGravando) {
+      return (
+        <div className='container-fluid'>
+          <p><span className='glyphicon glyphicon-refresh'/> Aguarde ...</p>
+        </div>
+      )
+    }
+
     return (
 
       <div className="container-fluid">
